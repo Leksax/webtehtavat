@@ -1,0 +1,18 @@
+
+input{
+    background-color: darkseagreen;
+}
+legend{
+    font-weight: bold;
+}
+div{
+    font-size: 15px;
+}
+label{
+    font-size: 20px;
+    color: dimgrey;
+    background-color: floralwhite;
+}
+fieldset{
+    width: 200px;
+}

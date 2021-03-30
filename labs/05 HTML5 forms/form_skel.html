@@ -4,6 +4,7 @@
 	This page demonstrates a form.
 	-->
 	<head>
+		<link href="form.css" type="text/css" rel="stylesheet" />
 		<meta charset="utf-8"/>
 		<title>Demonstrating HTML forms</title>
 	</head>
@@ -12,49 +13,40 @@
 		<h1>Turnitin</h1>
 		<form  lang="fi" action="">
 			<div>
-				Name: <input type="text" name="studentname"/>
+				<form action="">
+					<fieldset>
+				Name: <input type="text"  oninvalid="this.setCustomValidity('Nyt meni pieleen')" name="studentname" placeholder="Etunimi"/>
+				Student id: <input type="text" pattern="\d{7}" oninvalid="this.setCustomValidity('Nyt meni pieleen')" name="id"  placeholder="Numero"/>
+				Email:<input type="email" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" oninvalid="this.setCustomValidity('Nyt meni pieleen')" name="email" placeholder="Sähköposti"/>
+				</fieldset>
+		</form>
 			</div>
 			<div>
-				Student id: <input type="text" name="id"  />
+				<form action="">
+					<fieldset>
+				Assignment: <input type="text" oninvalid="this.setCustomValidity('Nyt meni pieleen')" name="assignment" placeholder="tehtävänanto"/>
+				Code: <input type="text" oninvalid="this.setCustomValidity('Nyt meni pieleen')" name="code" placeholder="koodi"/>
+					</fieldset>
+				</form>
 			</div>
 			<div>
-				Email:
-				<!--
-				Make an input named "email"
-				-->
+				Cheat: <input type="checkbox" oninvalid="this.setCustomValidity('Nyt meni pieleen')" name="cheat"/>
 			</div>
 			<div>
-				Assignment:
-				<!--
-				Make an input named "assignment"
-				-->
-				
-			</div>
+				<form action="">
+					<fieldset>
+						<legend>Pay</legend>
+						<label><input type="radio" id="visa" name="payment" oninvalid="this.setCustomValidity('Nyt meni pieleen')" value="visa">Visa</label><br>
 
-			<div>
-				Code:
-				<!--
-				Make an input named "code" which is a text area to put student's code into.
-				-->
-				
+						<label><input type="radio" id="paypal" name="payment" oninvalid="this.setCustomValidity('Nyt meni pieleen')" value="paypal">Paypal</label><br>
+
+						<label><input type="radio" id="mastercard" name="payment" oninvalid="this.setCustomValidity('Nyt meni pieleen')" value="mastercard">MasterCard</label><br>
+					</fieldset>
+				</form>
 			</div>
 			<div>
-				Cheat:
-			<!--
-				Make an input named "cheat" which is a check box the student must check.
-			-->
-			</div>
-			<div>
-				Pay:
-			<!--
-				Make an input named "payment" which is a radio box with possible values of visa, paypal, mastercard
-			-->
-			</div>
-			<div>
-				Score:
-			<!--
-				Make an input named "score" which is a list of choices for the score 
-			-->
+				Score: <input type="range" id="score" name="score" min="0" max="10" oninvalid="this.setCustomValidity('Nyt meni pieleen')">
+
 			</div>
 			<input type="submit" />
 		</form>
