@@ -38,9 +38,24 @@ function addTask() {
     
 } // End of addTask() function.
 
+
+
+function removeDuplicates(){
+    var output = document.getElementById('output');
+    var uustaulu = [...new Set(tasks)];
+    tasks = uustaulu;
+    uusmessage = '<h2>To-Do</h2><ol>';
+    for (var i = 0, count = uustaulu.length; i < count; i++) {
+        uusmessage += '<li>' + uustaulu[i] + '</li>';
+    }
+    uusmessage += '</ol>';
+    output.innerHTML = uusmessage;
+}
+
 // Initial setup:
 function init() {
     'use strict';
     document.getElementById('theForm').onsubmit = addTask;
+    document.getElementById('button').onclick = removeDuplicates;
 } // End of init() function.
 window.onload = init;
