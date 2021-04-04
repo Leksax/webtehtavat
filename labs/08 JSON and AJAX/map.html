@@ -28,11 +28,22 @@
 			alert("Looks like you have an old browser!");
 		}
 	}
+    var x = 0;
+	function unlistedList(){
+        var ul = document.getElementById("xd");
+        var li = document.createElement("li");
+        x++;
+        for (let i = 0; i < 1; i++) {
+            li.appendChild(document.createTextNode(x));
+            ul.appendChild(li);
+        }
+    }
   </script>
 </head>
 <body>
 	<img id="map" src="data/map.jpg">
 	<p id="coords">Move mouse over map to find coordinates...</p>
 	<div id="mydiv" style="border:1px solid red">I am a DIV! Click me.</div>
+    <button id="xd" onclick="unlistedList()">Lista</button>
 </body>
 </html>

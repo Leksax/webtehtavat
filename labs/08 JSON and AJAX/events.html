@@ -28,10 +28,17 @@ function handleClick(e) {
 	}
 	alert("You clicked on " + target.id);
 }
+function Alert(e){
+  alert(e.target.innerText);
+};
+
+
+
 
   </script>
 </head>
 <body>
 <span id="clickme">Click me!</span>
+<div onmouseover="Alert(event)">Contains some text</div>
 </body>
 </html>

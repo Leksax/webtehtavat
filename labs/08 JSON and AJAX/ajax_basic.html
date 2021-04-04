@@ -59,7 +59,23 @@
       }
     }
   })();
-  </script>
+  $(document).ready(function(){
+      $("#nextbottom").click(function(e){
+          e.preventDefault();
+          $.ajax({type: "method type",
+              url: "url",
+              data: data,
+              success:function(result){
 
+              }
+          });
+      });
+  });
+  </script>
+<input type="url">
+  <div id="checkoutNextbottom" class="checkoutNext">
+      <button name="buttonNext" id="nextbottom" class="linkAsButton processButtonNext">mee tähä osotteesee</button>
+      <!---->
+  </div>
 </body>
 </html>
