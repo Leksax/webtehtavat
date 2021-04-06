@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Click me!</title>
+    <style>
+        body,
+        button {
+            margin: 10px;
+        }
+        
+        div {
+            padding: 10px;
+        }
+    </style>
+    <script>
+        /*
+                                //
+                                // The version without the closure...
+                                //
+                                var count = 0;
+                                window.onload = function() {
+                                	var button = document.getElementById("clickme");
+                                	button.onclick = handleClick;
+                                };
+
+                                function handleClick() {
+                                	var message = "You clicked me ";
+                                	var div = document.getElementById("message");
+                                	count++;
+                                	div.innerHTML = message + count + " times!";
+                                }
+                                */
+
+        //
+        // The version with the closure.
+        //
+        window.onload = function() {
+            var count = 0;
+            var div = document.getElementById("playback-speed");
+
+            var button = document.getElementById("plus");
+            button.onclick = function() {
+                count++;
+                div.innerHTML = count;
+            };
+            var button = document.getElementById("minus");
+            button.onclick = function() {
+                count--;
+                div.innerHTML = count;
+            };
+            var button = document.getElementById("zero");
+            button.onclick = function() {
+                count = 0;
+                div.innerHTML = count;
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <button id="plus">+</button>
+    <button id="zero">0</button>
+    <button id="minus">-</button>
+    <div id="playback-speed"></div>
+</body>
+
+</html>
